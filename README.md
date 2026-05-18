@@ -37,6 +37,32 @@ Make the package
 makepkg -si
 ```
 
+### Compiling from Source
+You may want to compile Simple Wireplumber GUI from source.
+
+Clone the repository and change directory into it
+```BASH
+git clone https://www.github.com/dyegoaurelio/simple-wireplumber-gui.git
+cd simple-wireplumber-gui
+```
+Create and set up the build directory
+```BASH
+mkdir ../builddir
+meson setup ../builddir
+```
+Compile
+```BASH
+meson compile -C ../builddir
+```
+Finally, as root, install
+```BASH
+meson install -C ../builddir
+```
+If running `simple-wireplumber-gui` gives a "permission denied" error, as root, try
+```BASH
+chmod +x /usr/local/bin/simple-wireplumber-gui
+```
+
 ## Clearing changes
 
 When you uninstall this app, its changes will remain on your system.
